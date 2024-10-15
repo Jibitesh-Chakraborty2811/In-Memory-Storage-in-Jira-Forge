@@ -1,0 +1,22 @@
+modules:
+  jira:issuePanel:
+    - key: storage-packaage-tryout-hello-world-issue-panel
+      resource: main
+      resolver:
+        function: resolver
+      render: native
+      title: storage-packaage-tryout
+      icon: https://developer.atlassian.com/platform/forge/images/icons/issue-panel-icon.svg
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: src/frontend/index.jsx
+app:
+  runtime:
+    name: nodejs20.x
+  id: ari:cloud:ecosystem::app/da2878cc-5c9d-42c3-a13f-0b8bdb58851c
+permissions:
+  scopes:
+    - storage:app
